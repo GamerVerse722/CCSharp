@@ -26,14 +26,14 @@ public class LuaProgram
         };
 
     public string Filename { get; set; }
-    public HashSet<string> Modules = new();
+    public HashSet<LuaRequireModuleAttribute> Modules = new();
     public string CompiledCode { get; set; }
     public List<string> MainMethods = new();
     
     public LuaCompileFlags Flags { get; set; }
 
     public string FullCode => string.Join("\n",
-        Modules.Select(module => $"local {module} = require(\"{module}\")").Union(new[] { CompiledCode })
+        Modules.Select(module => $"local {module.Variable} = require(\"{module.Module}\")").Union(new[] { CompiledCode })
             .Union(MainMethods.Select(main => $"{main}()")));
 
     public static LuaProgram FromType(Type type)
@@ -46,7 +46,7 @@ public class LuaProgram
         };
         var decompiler = new CSharpDecompiler(type.Assembly.Location, DecompilerSettings);
         var syntaxTree = decompiler.Decompile(new List<EntityHandle> { MetadataTokens.EntityHandle(type.GetTypeInfo().MetadataToken) });
-        //Console.WriteLine(syntaxTree);
+        Console.WriteLine(syntaxTree);
         var compiler = new CSharpCompiler(program.Flags);
         var rootNode = compiler.CompileNode(new DecompilationResult(syntaxTree));
         program.Modules = compiler.MainResolver.RequiredModules;
@@ -74,7 +74,7 @@ public class LuaProgram
             //Console.WriteLine(syntaxTree);
             var compiler = new CSharpCompiler(program.Flags, type.GetLuaClassName(program.Flags));
             var rootNode = compiler.CompileNode(new DecompilationResult(syntaxTree));
-            foreach (string module in compiler.MainResolver.RequiredModules)
+            foreach (LuaRequireModuleAttribute module in compiler.MainResolver.RequiredModules)
             {
                 program.Modules.Add(module);
             }
@@ -90,9 +90,9 @@ public class LuaProgram
     {
         if (includeDependencies)
         {
-            foreach (string module in Modules)
+            foreach (LuaRequireModuleAttribute module in Modules)
             {
-                if (module == "linq")
+                if (module.Module == "linq")
                     File.WriteAllText(Path.Combine(directory, "linq.lua"), ModuleDependencies.LINQ);
             }
         }

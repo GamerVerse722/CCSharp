@@ -32,7 +32,7 @@ class LinqResolverPack
     }
         
     [RedILDataType(DataValueType.Unknown)]
-    [RequireModule("linq")]
+    [LuaRequireModule("linq")]
     class EnumerableProxy
     {
         [RedILResolve(typeof(LinqStatementResolver), "toTable")]

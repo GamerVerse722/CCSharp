@@ -125,11 +125,11 @@ public class MainResolver
 
         public Dictionary<string, Member> StaticMembers { get; set; }
             
-        public List<string> RequiredModules { get; set; }
+        public List<LuaRequireModuleAttribute> RequiredModules { get; set; }
         public string LuaClassName { get; set; }
     }
     
-    public HashSet<string> RequiredModules = new();
+    public HashSet<LuaRequireModuleAttribute> RequiredModules = new();
     public HashSet<Type> LuaClassDependencies = new();
     public LuaCompileFlags Flags;
     
@@ -369,7 +369,7 @@ public class MainResolver
             InstanceMembers = instanceMembers.ToDictionary(m => m.Name, m => m),
             StaticMethods = staticMethods.GroupBy(m => (m.Name, m.Signature.Length)).ToDictionary(g => g.Key, g => g.ToList()),
             StaticMembers = staticMembers.ToDictionary(m => m.Name, m => m),
-            RequiredModules = proxy.GetCustomAttributes().Where(a => a is RequireModuleAttribute).Select(a => ((RequireModuleAttribute)a).Module).ToList(),
+            RequiredModules = proxy.GetCustomAttributes().Where(a => a is LuaRequireModuleAttribute).Cast<LuaRequireModuleAttribute>().ToList(),
             LuaClassName = isLuaClass ? luaClassName : null
         });
     }
@@ -550,7 +550,7 @@ public class MainResolver
 
         if (typeDef.RequiredModules != null && typeDef.RequiredModules.Count >= 1)
         {
-            foreach (string module in typeDef.RequiredModules)
+            foreach (LuaRequireModuleAttribute module in typeDef.RequiredModules)
             {
                 RequiredModules.Add(module);
             }
