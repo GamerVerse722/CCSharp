@@ -48,7 +48,7 @@ public class Ship
     /// </summary>
     /// <param name="static">Whether the Ship should be static</returns>
     [LuaMethod("ship.setStatic")]
-    public static bool SetStatic(bool static) => default;
+    public static void SetStatic(bool static) { }
 
     /// <summary>
     /// Gets all Constraints affecting the Ship
