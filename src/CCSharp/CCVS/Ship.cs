@@ -27,7 +27,7 @@ public class Ship
     /// </summary>
     /// <param name="slug">The new Slug</returns>
     [LuaMethod("ship.setSlug")]
-    public static void SetSlug(string slug) => default;
+    public static void SetSlug(string slug) { }
 
     /// <summary>
     /// Gets the Ship's Mass
@@ -97,7 +97,7 @@ public class Ship
     /// </summary>
     /// <param name="scale">The new scale of the Ship</param>
     [LuaMethod("ship.setScale")]
-    public static void SetScale(double scale) => default;
+    public static void SetScale(double scale) { }
 
     /// <summary>
     /// Gets the Ship's orientation as a Quaternion
@@ -216,14 +216,14 @@ public class Ship
     /// </summary>
     /// <param name="data">The data to use during teleportation</param>
     [LuaMethod("ship.teleport")]
-    public static void Teleport(object data) => default;
+    public static void Teleport(object data) { }
 
     /// <summary>
     /// Applies an invariant force to the Ship on the next physics tick
     /// </summary>
     /// <param name="force">The force to be applied</param>
     [LuaMethod("ship.applyInvariantForce")]
-    public static void ApplyInvariantForce(Vector3 force) => default;
+    public static void ApplyInvariantForce(Vector3 force) { }
     /// <summary>
     /// Applies an invariant force to the Ship on the next physics tick
     /// </summary>
@@ -231,14 +231,14 @@ public class Ship
     /// <param name="forceY">The force to be applied on the Y axis</param>
     /// <param name="forceZ">The force to be applied on the Z axis</param>
     [LuaMethod("ship.applyInvariantForce")]
-    public static void ApplyInvariantForce(double forceX, double forceY, double forceZ) => default;
+    public static void ApplyInvariantForce(double forceX, double forceY, double forceZ) { }
 
     /// <summary>
     /// Applies an invariant torque to the Ship on the next physics tick
     /// </summary>
     /// <param name="torque">The torque to be applied</param>
     [LuaMethod("ship.applyInvariantTorque")]
-    public static void ApplyInvariantTorque(Vector3 torque) => default;
+    public static void ApplyInvariantTorque(Vector3 torque) { }
     /// <summary>
     /// Applies an invariant torque to the Ship on the next physics tick
     /// </summary>
@@ -246,7 +246,7 @@ public class Ship
     /// <param name="torqueY">The torque to be applied on the Y axis</param>
     /// <param name="torqueZ">The torque to be applied on the Z axis</param>
     [LuaMethod("ship.applyInvariantTorque")]
-    public static void ApplyInvariantTorque(double torqueX, double torqueY, double torqueZ) => default;
+    public static void ApplyInvariantTorque(double torqueX, double torqueY, double torqueZ) { }
 
     /// <summary>
     /// Applies an invariant force to the Ship at the given local offset on the next physics tick
@@ -254,7 +254,7 @@ public class Ship
     /// <param name="force">The force to be applied</param>
     /// <param name="pos">The local offset ot apply the force to</param>
     [LuaMethod("ship.applyInvariantForceToPos")]
-    public static void ApplyInvariantForceToPosition(Vector3 force, Vector3 pos) => default;
+    public static void ApplyInvariantForceToPosition(Vector3 force, Vector3 pos) { }
     /// <summary>
     /// Applies an invariant force to the Ship at the given local offset on the next physics tick
     /// </summary>
@@ -265,14 +265,14 @@ public class Ship
     /// <param name="posY">The local Y-axis offset to apply the force to</param>
     /// <param name="posZ">The local Z-axis offset to apply the force to</param>
     [LuaMethod("ship.applyInvariantForceToPos")]
-    public static void ApplyInvariantForceToPosition(double forceX, double forceY, double forceZ, double posX, double posY, double posZ) => default;
+    public static void ApplyInvariantForceToPosition(double forceX, double forceY, double forceZ, double posX, double posY, double posZ) { }
 
     /// <summary>
     /// Applies a rotation-dependent force to the Ship on the next physics tick
     /// </summary>
     /// <param name="force">The force to be applied</param>
     [LuaMethod("ship.applyRotDependentForce")]
-    public static void ApplyRotDependentForce(Vector3 force) => default;
+    public static void ApplyRotDependentForce(Vector3 force) { }
     /// <summary>
     /// Applies a rotation-dependent force to the Ship on the next physics tick
     /// </summary>
@@ -280,14 +280,14 @@ public class Ship
     /// <param name="forceY">The force to be applied on the Y axis</param>
     /// <param name="forceZ">The force to be applied on the Z axis</param>
     [LuaMethod("ship.applyRotDependentForce")]
-    public static void ApplyRotDependentForce(double forceX, double forceY, double forceZ) => default;
+    public static void ApplyRotDependentForce(double forceX, double forceY, double forceZ) { }
 
     /// <summary>
     /// Applies a rotation-dependent torque to the Ship on the next physics tick
     /// </summary>
     /// <param name="torque">The torque to be applied</param>
     [LuaMethod("ship.applyRotDependentTorque")]
-    public static void ApplyRotDependentTorque(Vector3 torque) => default;
+    public static void ApplyRotDependentTorque(Vector3 torque) { }
     /// <summary>
     /// Applies a rotation-dependent torque to the Ship on the next physics tick
     /// </summary>
@@ -295,7 +295,7 @@ public class Ship
     /// <param name="torqueY">The torque to be applied on the Y axis</param>
     /// <param name="torqueZ">The torque to be applied on the Z axis</param>
     [LuaMethod("ship.applyRotDependentTorque")]
-    public static void ApplyRotDependentTorque(double torqueX, double torqueY, double torqueZ) => default;
+    public static void ApplyRotDependentTorque(double torqueX, double torqueY, double torqueZ) { }
 
     /// <summary>
     /// Applies a rotation-dependent force to the Ship at the given local offset on the next physics tick
@@ -303,7 +303,7 @@ public class Ship
     /// <param name="force">The force to be applied</param>
     /// <param name="pos">The local offset ot apply the force to</param>
     [LuaMethod("ship.applyRotDependentForceToPos")]
-    public static void ApplyRotDependentForceToPosition(Vector3 force, Vector3 pos) => default;
+    public static void ApplyRotDependentForceToPosition(Vector3 force, Vector3 pos) { }
     /// <summary>
     /// Applies a rotation-dependent force to the Ship at the given local offset on the next physics tick
     /// </summary>
@@ -314,7 +314,7 @@ public class Ship
     /// <param name="posY">The local Y-axis offset to apply the force to</param>
     /// <param name="posZ">The local Z-axis offset to apply the force to</param>
     [LuaMethod("ship.applyRotDependentForceToPos")]
-    public static void ApplyRotDependentForceToPosition(double forceX, double forceY, double forceZ, double posX, double posY, double posZ) => default;
+    public static void ApplyRotDependentForceToPosition(double forceX, double forceY, double forceZ, double posX, double posY, double posZ) { }
 
     /// <summary>
     /// The base constraint data class

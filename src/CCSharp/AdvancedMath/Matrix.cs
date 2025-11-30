@@ -1,5 +1,7 @@
+using System;
 using CCSharp.Attributes;
 using CCSharp.ComputerCraft;
+using CCSharp.RedIL.Resolving.CommonResolvers;
 
 namespace CCSharp.AdvancedMath;
 
@@ -8,7 +10,7 @@ public class Matrix
     /// <summary>
     /// Represents a single row in the Matrix.
     /// </summary>
-    class Row
+    public class Row
     {
         /// <summary>
         /// Gets or sets the value at the specified column in this row.
@@ -82,7 +84,7 @@ public class Matrix
     /// <param name="b">The column vector b.</param>
     /// <param name="tolerance">The tolerance for the solution.</param>
     /// <returns>A tuple containing the solution matrix and a warning string if applicable.</returns>
-    [LuaMethod("matrix.solve"), CallMethodFlags.WrapAsTable]
+    [LuaMethod("matrix.solve", CallMethodFlags.WrapAsTable)]
     public static (Matrix Solution, string Warning) Solve(Matrix A, Matrix b, double tolerance) => default;
 
     /// <summary>
@@ -91,7 +93,7 @@ public class Matrix
     /// <param name="A">The matrix A.</param>
     /// <param name="b">The column vector b.</param>
     /// <returns>A tuple containing the solution matrix and a warning string if applicable.</returns>
-    [LuaMethod("matrix.solve"), CallMethodFlags.WrapAsTable]
+    [LuaMethod("matrix.solve", CallMethodFlags.WrapAsTable)]
     public static (Matrix Solution, string Warning) Solve(Matrix A, Matrix b) => default;
 
     /// <summary>

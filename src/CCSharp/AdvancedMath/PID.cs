@@ -6,7 +6,7 @@ namespace CCSharp.AdvancedMath;
 /// <summary>
 /// A basic PID type and common PID operations. This may be useful when working with control systems.
 /// </summary>
-[LuaRequiredModule("AdvancedMath.pid", "pid")]
+[LuaRequireModule("AdvancedMath.pid", "pid")]
 public abstract class PID<T, Y>
 {
     /// <summary>
@@ -61,7 +61,7 @@ public abstract class PID<T, Y>
     /// <param name="min">The minimum control output</param>
     /// <param name="max">The maximum control output</param>
     [LuaMethod("clampOutput")]
-    public void ClampOutput(double min, double max) => default;
+    public void ClampOutput(double min, double max) { }
     /// <summary>
     /// Disables the clamps on the control output
     /// </summary>
@@ -74,12 +74,12 @@ public abstract class PID<T, Y>
     /// <param name="min">The minimum integral limit</param>
     /// <param name="max">The maximum integral limit</param>
     [LuaMethod("limitIntegral")]
-    public void LimitIntegral(double min, double max) => default;
+    public void LimitIntegral(double min, double max) { }
     /// <summary>
     /// Disables the limits on the Integral
     /// </summary>
     [LuaMethod("limitIntegral")]
-    public void LimitIntegral() => default;
+    public void LimitIntegral() { }
 
     /// <summary>
     /// A Scalar PID for handling doubles
@@ -95,7 +95,7 @@ public abstract class PID<T, Y>
         /// <param name="d">The derivative gain</param>
         /// <param name="discrete">Whether the PID controller is discrete or continuous</param>
         [LuaConstructor("pid.new")]
-        public Scalar(T target, double p, double i, double d, bool discrete) : base(target, p, i, d, discrete) { }
+        public Scalar(double target, double p, double i, double d, bool discrete) : base(target, p, i, d, discrete) { }
     }
     /// <summary>
     /// A Vector PID for handling Vectors
@@ -111,7 +111,7 @@ public abstract class PID<T, Y>
         /// <param name="d">The derivative gain</param>
         /// <param name="discrete">Whether the PID controller is discrete or continuous</param>
         [LuaConstructor("pid.new")]
-        public Vector(T target, double p, double i, double d, bool discrete) : base(target, p, i, d, discrete) { }
+        public Vector(Vector3 target, double p, double i, double d, bool discrete) : base(target, p, i, d, discrete) { }
     }
     /// <summary>
     /// A Quaternion PID for handling Quaternion. Step outputs the angular velocity as the control output.
@@ -127,6 +127,6 @@ public abstract class PID<T, Y>
         /// <param name="d">The derivative gain</param>
         /// <param name="discrete">Whether the PID controller is discrete or continuous</param>
         [LuaConstructor("pid.new")]
-        public Quat(T target, double p, double i, double d, bool discrete) : base(target, p, i, d, discrete) { }
+        public Quat(Quaternion target, double p, double i, double d, bool discrete) : base(target, p, i, d, discrete) { }
     }
 }

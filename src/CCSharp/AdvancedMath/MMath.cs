@@ -1,3 +1,4 @@
+using System;
 using CCSharp.Attributes;
 using CCSharp.ComputerCraft;
 
@@ -6,7 +7,7 @@ namespace CCSharp.AdvancedMath;
 /// <summary>
 /// A grab bag of linear equation solvers. Useful for finding solution using linear algebra.
 /// </summary>
-[LuaRequiredModule("AdvancedMath.mmath", "mmath")]
+[LuaRequireModule("AdvancedMath.mmath", "mmath")]
 public class MMath
 {
     /// <summary>
