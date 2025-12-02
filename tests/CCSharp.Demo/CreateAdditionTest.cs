@@ -23,7 +23,7 @@ public class CreateAdditionTest
         Console.WriteLine(electricMotor.Rotate(102.5, 127));
         Console.WriteLine(electricMotor.Translate(2, 21));
         Console.WriteLine(electricMotor.GetMaxInsert());
-        Console.WriteLine(electricMotor.GetMaxInsert());
+        Console.WriteLine(electricMotor.GetMaxExtract());
         
         Console.WriteLine("---Modular Accumulator---");
 
@@ -35,5 +35,13 @@ public class CreateAdditionTest
         Console.WriteLine(modularAccumulator.GetMaxExtract());
         Console.WriteLine(modularAccumulator.GetHeight());
         Console.WriteLine(modularAccumulator.GetWidth());
+        
+        Console.WriteLine("---Redstone Relay---");
+
+        RedstoneRelay redstoneRelay = Peripheral.Find<RedstoneRelay>();
+        Console.WriteLine(redstoneRelay.GetMaxInsert());
+        Console.WriteLine(redstoneRelay.GetMaxExtract());
+        Console.WriteLine(redstoneRelay.GetThroughput());
+        Console.WriteLine(redstoneRelay.IsPowered());
     }
 }
