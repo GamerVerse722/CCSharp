@@ -43,5 +43,14 @@ public class CreateAdditionTest
         Console.WriteLine(redstoneRelay.GetMaxExtract());
         Console.WriteLine(redstoneRelay.GetThroughput());
         Console.WriteLine(redstoneRelay.IsPowered());
+        
+        Console.WriteLine("---Portable Energy Interface---");
+
+        PortableEnergyInterface portableEnergyInterface = Peripheral.Find<PortableEnergyInterface>();
+        Console.WriteLine(portableEnergyInterface.GetEnergy());
+        Console.WriteLine(portableEnergyInterface.GetCapacity());
+        Console.WriteLine(portableEnergyInterface.IsConnected());
+        Console.WriteLine(portableEnergyInterface.GetMaxInsert());
+        Console.WriteLine(portableEnergyInterface.GetMaxExtract());
     }
 }
