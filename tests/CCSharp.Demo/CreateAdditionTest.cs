@@ -11,6 +11,8 @@ public class CreateAdditionTest
     [LuaMain]
     public static void Start()
     {
+        Console.WriteLine("---Electric Motor---");
+        
         ElectricMotor electricMotor = Peripheral.Find<ElectricMotor>();
         Console.WriteLine(electricMotor.GetType());
         electricMotor.SetSpeed(127);
@@ -22,5 +24,16 @@ public class CreateAdditionTest
         Console.WriteLine(electricMotor.Translate(2, 21));
         Console.WriteLine(electricMotor.GetMaxInsert());
         Console.WriteLine(electricMotor.GetMaxInsert());
+        
+        Console.WriteLine("---Modular Accumulator---");
+
+        ModularAccumulator modularAccumulator = Peripheral.Find<ModularAccumulator>();
+        Console.WriteLine(modularAccumulator.GetEnergy());
+        Console.WriteLine(modularAccumulator.GetCapacity());
+        Console.WriteLine(modularAccumulator.GetPercent());
+        Console.WriteLine(modularAccumulator.GetMaxInsert());
+        Console.WriteLine(modularAccumulator.GetMaxExtract());
+        Console.WriteLine(modularAccumulator.GetHeight());
+        Console.WriteLine(modularAccumulator.GetWidth());
     }
 }
