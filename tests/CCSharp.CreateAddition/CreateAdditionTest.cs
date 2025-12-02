@@ -3,7 +3,7 @@ using CCSharp.Attributes;
 using CCSharp.ComputerCraft;
 using CCSharp.CreateAddition;
 
-namespace CCSharp.Demo;
+namespace CCSharp.Tests;
 
 [LuaProgram]
 public class CreateAdditionTest
