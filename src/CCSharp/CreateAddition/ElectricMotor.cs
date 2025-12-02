@@ -1,7 +1,6 @@
 using System;
 using CCSharp.Attributes;
 using CCSharp.ComputerCraft.Peripherals;
-using Microsoft.CodeAnalysis;
 
 namespace CCSharp.CreateAddition;
 
