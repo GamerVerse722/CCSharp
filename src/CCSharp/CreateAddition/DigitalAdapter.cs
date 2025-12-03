@@ -1,10 +1,11 @@
 using System;
 using CCSharp.Attributes;
+using CCSharp.ComputerCraft.Peripherals;
 
 namespace CCSharp.CreateAddition;
 
 [LuaImplicitTypeArgument("digital_adapter")]
-public class DigitalAdapter
+public class DigitalAdapter : CCPeripheral
 {
     // Display Link
     [LuaMethod("clearLine")]
@@ -25,7 +26,7 @@ public class DigitalAdapter
     [LuaMethod("getMaxLines")]
     public int GetMaxLines() => default;
     
-    // Stress Controller
+    // Speed Controller
     [LuaMethod("setTargetSpeed")]
     public void SetTargetSpeed(String direction, int speed) {}
     
@@ -47,8 +48,8 @@ public class DigitalAdapter
     public int GetKineticTopSpeed(String direction) => default;
     
     // Pulley
-    [LuaMethod("getPullyDistance")]
-    public int GetPullyDistance(String direction) => default;
+    [LuaMethod("getPulleyDistance")]
+    public int GetPulleyDistance(String direction) => default;
     
     [LuaMethod("getPistonDistance")]
     public int GetPistonDistance(String direction) => default;

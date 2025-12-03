@@ -52,5 +52,46 @@ public class CreateAdditionTest
         Console.WriteLine(portableEnergyInterface.IsConnected());
         Console.WriteLine(portableEnergyInterface.GetMaxInsert());
         Console.WriteLine(portableEnergyInterface.GetMaxExtract());
+        
+        Console.WriteLine("---Digital Adapter---");
+        DigitalAdapter displayLink = Peripheral.Wrap<DigitalAdapter>("digital_adapter_0");
+        displayLink.ClearLine();
+        displayLink.Clear();
+        displayLink.Print("Testing");
+        Console.WriteLine(displayLink.GetLine());
+        Console.WriteLine(displayLink.SetLine(1));
+        Console.WriteLine(displayLink.GetMaxLines());
+
+        DigitalAdapter speedController = Peripheral.Wrap<DigitalAdapter>("digital_adapter_1");
+        speedController.SetTargetSpeed("east",-67);
+        Console.WriteLine("east");
+        
+        DigitalAdapter stressGauge = Peripheral.Wrap<DigitalAdapter>("digital_adapter_2");
+        Console.WriteLine(stressGauge.GetKineticStress("east"));
+        Console.WriteLine(stressGauge.GetKineticCapacity("east"));
+        
+        DigitalAdapter speedGauge = Peripheral.Wrap<DigitalAdapter>("digital_adapter_3");
+        Console.WriteLine(speedGauge.GetKineticSpeed("east"));
+        Console.WriteLine(speedGauge.GetKineticTopSpeed("east"));
+        
+        DigitalAdapter hosePully = Peripheral.Wrap<DigitalAdapter>("digital_adapter_4");
+        Console.WriteLine(hosePully.GetPulleyDistance("east"));
+        
+        DigitalAdapter mechanicalPiston = Peripheral.Wrap<DigitalAdapter>("digital_adapter_5");
+        Console.WriteLine(mechanicalPiston.GetPistonDistance("east"));
+        
+        DigitalAdapter mechanicalBearing = Peripheral.Wrap<DigitalAdapter>("digital_adapter_6");
+        Console.WriteLine(mechanicalBearing.GetBearingAngle("east"));
+        
+        DigitalAdapter elevatorPully = Peripheral.Wrap<DigitalAdapter>("digital_adapter_7");
+        Console.WriteLine(elevatorPully.GetElevatorFloor("east"));
+        Console.WriteLine(elevatorPully.HasElevatorArrived("east"));
+        Console.WriteLine(elevatorPully.GetElevatorFloors("east"));
+        Console.WriteLine(elevatorPully.GetElevatorFloorName("east", 1));
+        Console.WriteLine(elevatorPully.GoToElevatorFloor("east", 1));
+
+        DigitalAdapter digitalElectricMotor = Peripheral.Wrap<DigitalAdapter>("digital_adapter_8");
+        Console.WriteLine(digitalElectricMotor.GetDurationAngle(20, 50));
+        Console.WriteLine(digitalElectricMotor.GetDurationDistance(5, 37));
     }
 }

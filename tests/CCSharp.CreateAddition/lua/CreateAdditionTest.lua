@@ -1,0 +1,1 @@
+/home/gamerverse/RiderProjects/CCSharp/tests/CCSharp.CreateAddition/bin/Debug/net9.0/CreateAdditionTest.lua
