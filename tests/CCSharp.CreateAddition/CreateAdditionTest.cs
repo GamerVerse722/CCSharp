@@ -25,6 +25,7 @@ public class CreateAdditionTest
         Console.WriteLine(electricMotor.GetMaxInsert());
         Console.WriteLine(electricMotor.GetMaxExtract());
         
+        OS.Sleep(0.5f);
         Console.WriteLine("---Modular Accumulator---");
 
         ModularAccumulator modularAccumulator = Peripheral.Find<ModularAccumulator>();
@@ -36,6 +37,7 @@ public class CreateAdditionTest
         Console.WriteLine(modularAccumulator.GetHeight());
         Console.WriteLine(modularAccumulator.GetWidth());
         
+        OS.Sleep(0.5f);
         Console.WriteLine("---Redstone Relay---");
 
         RedstoneRelay redstoneRelay = Peripheral.Find<RedstoneRelay>();
@@ -44,6 +46,7 @@ public class CreateAdditionTest
         Console.WriteLine(redstoneRelay.GetThroughput());
         Console.WriteLine(redstoneRelay.IsPowered());
         
+        OS.Sleep(0.5f);
         Console.WriteLine("---Portable Energy Interface---");
 
         PortableEnergyInterface portableEnergyInterface = Peripheral.Find<PortableEnergyInterface>();
@@ -53,6 +56,7 @@ public class CreateAdditionTest
         Console.WriteLine(portableEnergyInterface.GetMaxInsert());
         Console.WriteLine(portableEnergyInterface.GetMaxExtract());
         
+        OS.Sleep(0.5f);
         Console.WriteLine("---Digital Adapter---");
         DigitalAdapter displayLink = Peripheral.Wrap<DigitalAdapter>("digital_adapter_0");
         displayLink.ClearLine();
